@@ -7,14 +7,14 @@ include'includes/ez_sql_core.php';
 include'includes/ez_sql_mysqli.php';
 $db = new ezSQL_mysqli($config["username"], $config["password"], $config["database_name"], $config["server"]);
     
-$mod = $_GET["m"];
-$act = $_GET["act"];   
+$mod = $_GET["m"] ?? '';
+$act = $_GET["act"] ?? '';   
 
 function esc_field($str){
-    if (!get_magic_quotes_gpc())
-        return addslashes($str);
-    else
+    if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
         return $str;
+    else
+        return addslashes($str);
 }
 
 function redirect_js($url){

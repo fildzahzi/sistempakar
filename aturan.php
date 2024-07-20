@@ -6,7 +6,7 @@
         <form class="form-inline">
             <input type="hidden" name="m" value="aturan" />
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Pencarian. . ." name="q" value="<?=$_GET['q']?>" />
+                <input class="form-control" type="text" placeholder="Pencarian. . ." name="q" value="<?=$_GET['q'] ?? '' ?>" />
             </div>
             <div class="form-group">
                 <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
@@ -28,7 +28,7 @@
             </tr>
         </thead>
         <?php
-        $q = esc_field($_GET['q']);
+        $q = esc_field($_GET['q'] ?? '' );
         $rows = $db->get_results("SELECT r.ID, g.nama_gejala, p.nama_penyakit, r.nilai
             FROM bayes_aturan r INNER JOIN bayes_penyakit p ON p.`kode_penyakit`=r.`kode_penyakit` INNER JOIN bayes_gejala g ON g.`kode_gejala`=r.`kode_gejala`
             WHERE r.kode_gejala LIKE '%$q%'

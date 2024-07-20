@@ -9,19 +9,19 @@
                 <label>Diagnosa <span class="text-danger">*</span></label>
                 <select class="form-control" name="kode_penyakit">
                     <option value=""></option>
-                    <?=get_penyakit_option($_POST["kode_penyakit"])?>
+                    <?=get_penyakit_option($_POST["kode_penyakit"] ?? '')?>
                 </select>
             </div>
             <div class="form-group">
                 <label>Gejala <span class="text-danger">*</span></label>
                 <select class="form-control" name="kode_gejala">
                     <option value=""></option>
-                    <?=get_gejala_option($_POST["kode_gejala"])?>
+                    <?=get_gejala_option($_POST["kode_gejala"] ?? '')?>
                 </select>
             </div>
             <div class="form-group">
                 <label>Nilai <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="nilai" value="<?=$_POST["nilai"]?>"/>
+                <input class="form-control" type="text" name="nilai" value="<?=$_POST["nilai"] ?? ''?>"/>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>

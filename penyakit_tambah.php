@@ -7,19 +7,19 @@
         <form method="post" action="?m=penyakit_tambah">
             <div class="form-group">
                 <label>Kode <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="kode_penyakit" value="<?=$_POST["kode_penyakit"]?>"/>
+                <input class="form-control" type="text" name="kode_penyakit" value="<?=$_POST["kode_penyakit"] ?? '' ?>"/>
             </div>
             <div class="form-group">
                 <label>Nama Penyakit <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="nama_penyakit" value="<?=$_POST["nama_penyakit"]?>"/>
+                <input class="form-control" type="text" name="nama_penyakit" value="<?=$_POST["nama_penyakit"] ?? '' ?>"/>
             </div>
             <div class="form-group">
                 <label>Bobot <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="bobot" value="<?=$_POST["bobot"]?>"/>
+                <input class="form-control" type="text" name="bobot" value="<?=$_POST["bobot"] ?? '' ?>"/>
             </div>
             <div class="form-group">
                 <label>Keterangan</label>
-                <textarea class="form-control" name="keterangan"><?=$_POST["keterangan"]?></textarea>
+                <textarea class="form-control" name="keterangan"><?=$_POST["keterangan"] ?? '' ?></textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>

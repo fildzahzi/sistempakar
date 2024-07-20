@@ -32,14 +32,13 @@
 
 	class ezSQL_mysqli extends ezSQLcore
 	{
-
-		var $dbuser = false;
-		var $dbpassword = false;
-		var $dbname = false;
-		var $dbhost = false;
-		var $dbport = false;
-		var $encoding = false;
-		var $rows_affected = false;
+		var $dbuser = 'root';
+		var $dbpassword = '';
+		var $dbname = 'spnaivebayes1';
+		var $dbhost = 'localhost';
+		var $dbport = '';
+		var $encoding = '';
+		var $rows_affected = '';
 
 		/**********************************************************************
 		*  Constructor - allow the user to perform a quick connect at the

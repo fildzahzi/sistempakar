@@ -22,7 +22,7 @@ $demo = false;
         
         $row = $db->get_row("SELECT * FROM bayes_admin WHERE user='$user' AND pass='$pass'");
         if($row){
-            $_SESSION[login] = $row->user;
+            $_SESSION['login'] = $row->user;
             redirect_js("index.php");
         } else{
             print_msg("Salah kombinasi username dan password");  

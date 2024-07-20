@@ -29,7 +29,7 @@ include'functions.php';
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-          <?php if($_SESSION['login']):?>
+          <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true):?>
             <li><a href="?m=penyakit"><span class="glyphicon glyphicon-pushpin"></span> Penyakit</a></li>
             <li><a href="?m=gejala"><span class="glyphicon glyphicon-flash"></span> Gejala</a></li>
             <li><a href="?m=aturan"><span class="glyphicon glyphicon-star"></span> Aturan</a></li>
@@ -45,7 +45,7 @@ include'functions.php';
     <div class="container">
     <?php
         if(file_exists($mod.'.php')){
-            if($_SESSION['login'] || $mod=='login' || $mod=='konsultasi' || $mod=='thumbs'){
+            if(isset($_SESSION['login']) || $mod=='login' || $mod=='konsultasi' || $mod=='thumbs'){
                 include $mod.'.php';
             } else {
                 redirect_js('index.php?m=login');
@@ -60,7 +60,7 @@ include'functions.php';
           <p>
           Metode Bayes
           <span class="pull-right">
-          Copyright ©2020 <i class="fa fa-heart pulse"></i> <b><a href="http://www.mycoding.net" target="_blank">My Coding</a></b>
+          Copyright &copy; <?= date('Y') ?> <i class="fa fa-heart pulse"></i> <b><a href="http://www.mycoding.net" target="_blank">My Coding</a></b>
           <p>
         </span>
       </div>
